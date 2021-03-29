@@ -1,0 +1,31 @@
+@import '../mixins';
+@import '../vars';
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 36.1875rem;
+  height: 26.3125rem;
+  &__info-description{
+    &__last{
+      margin-bottom: 0rem;
+    }
+  }
+  &__price{
+    font-weight: 600;
+    font-size: 1.875rem;
+    line-height: 2.3125rem;
+    text-align: center;
+  }
+  &__info-description{
+    margin-bottom: 1.5625rem;
+  }
+  &_1st{
+    @include smallTablet { display: none; };
+  }
+  &_3st{
+    @include bigTablet { display: none;};
+  }
+}

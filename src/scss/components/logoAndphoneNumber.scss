@@ -1,0 +1,47 @@
+@import '../vars.scss';
+
+.phone-number{
+  position: relative;
+  color: $fontColor;
+  width: 202px;
+  white-space: nowrap;
+  &_bg_font{
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
+  }
+  &_sm_font{
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  &_ml{
+    margin-left: 25px;
+  }
+  &_disabled{
+    display: none;
+  }
+}
+.phone-number::before{
+  position: absolute;
+  top: 1.75rem;
+  content: "";
+  display: block;
+  border-bottom: 0.0625rem solid $fontColor;
+  width: 100%;
+}
+
+.logo{
+  font-family: $mainFont;
+  font-style: normal;
+  &_bg_size{
+    font-weight: 600;
+    font-size: 1.875rem;
+    line-height: 2.3125rem;
+  }
+  &_sm_size{
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}

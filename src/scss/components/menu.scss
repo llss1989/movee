@@ -1,0 +1,132 @@
+@import '../vars.scss';
+@import '../mixins';
+
+.menu{
+  z-index: 25;
+  &_horizontal{
+    display: flex;
+  }
+  &_vertical{
+    display: flex;
+    flex-direction: column;
+    &_mobile{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-top: 25px !important;
+      padding: 10px 0px;
+      background: $mainColor;
+      height: 200px;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      position: absolute;
+      top: 36px;
+      right: 1px;
+    }
+  }
+  &__item{
+    position: relative;
+    color: $fontColor;
+    text-decoration: none;
+    display: inline-block;
+    &_ml_60{
+      margin-left: 60px;
+    }
+   &_mainFont{
+    font-weight: 500;
+    &_18{
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+    }
+    &_20{
+      line-height: 1.5rem;
+      font-size: 1.25rem;
+    }
+   }
+   &_ml_50{
+     margin-left: 3.125rem;
+     @include smallDesktop { margin-left: 1.5rem};
+   }
+   &_mt_15{
+     margin-top: 0.9375rem;
+   }
+  }
+  &__item_hover_secondary_color::before{
+    background-color: $fontColor;
+  }
+  &__item_hover_main-color::before{
+    background-color: $mainColor;
+  }
+  &__item_hover::before{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    
+    transition: width .5s ease-in-out, left .5s ease-in-out;
+    left: 50%;
+    bottom: 0;
+  }
+  &__item_hover_secondary_color::after{
+    background-color: $fontColor;
+  }
+  &__item_hover_main-color::after{
+    background-color: $mainColor;
+  }
+  &__item_hover::after{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    
+    transition: width .5s ease-in-out;
+    left: 50%;
+    bottom: 0;
+  }
+  &__item_hover:hover:before{
+    width: 50%;
+    left: 0;
+  }
+  &__item_hover:hover::after{
+    width: 50%;
+  }
+  &__item_hover_demonstated:any-link:before{
+    width: 50%;
+    left: 0;
+  }
+  &__item_hover_demonstated:any-link::after{
+    width: 50%;
+  }
+  &__item_hover_demonstated{
+    opacity: .9;
+  }
+  &__item_active:active{
+    opacity: .9;
+  }
+  &_show{
+    display: block;
+    @include smallTablet { display: none;}
+  }
+}
+
+.hamburger{
+  background: $mainColor;
+  border: 0;
+  position: absolute;
+  top: 18%;
+  right: 0%;
+  display: none;
+  z-index: 9999;
+  &_active{
+    display: block;
+  }
+}
+.hamburger > div{
+  width: 2.75rem;
+  height: 0.125rem;
+  background-color: black;
+  margin: 0.375rem 0;
+}
+.hamburger:focus{
+  outline: 0;
+}

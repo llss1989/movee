@@ -1,0 +1,589 @@
+@import "mixins";
+@import "vars";
+
+
+body{
+  font-family: $mainFont;
+  font-style: normal;
+  box-sizing: border-box;
+  color: $fontColor;
+}
+
+// ----------------------------------------Хедер-------------------------------------------------------------------
+.header{
+  background: $mainColor;
+  overflow: hidden;
+  &__inner{
+    position: relative;
+    @include smallTablet {padding-bottom: 40px;}
+  &_forTopHeader{
+    height: 7em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    }
+  }
+}
+
+// --------------------------------------------------Общая обертка для всех секций------------------------------------------------------------------
+
+.mainInner{
+  margin: 0 auto;
+  &_width{
+    width: 68%;
+    @include smallDesktop { width: 88%;};
+  }
+}
+
+
+
+.mainContent{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 33.625rem;
+  justify-content: space-evenly;
+  @include smallTablet{ height: 100%; align-items: center; };
+  &__secondaryFoto{
+    position: absolute;
+    top: 13%;
+    left: 69%;
+    &_disabled{
+      display: none;
+    }
+  }
+}
+.mainFoto{
+  position: absolute;
+  bottom: 0%;
+  left: 47%;
+  z-index: 10;
+  @include middleTablet { left: 52%; }; 
+  @include smallTablet {  position: relative; left: 0%; };
+}
+
+//-----------------------------------------------Нижняя часть InfoBlock------------------------------------------------------------
+.strengths{
+  display: flex;
+  width: 54%;
+  z-index: 999;
+  max-width: 546px;
+  &_disabled{
+    display: none;
+  }
+  &_mb_3{
+    margin-bottom: 3%;
+  }
+  &__item{
+    display: flex;
+  }
+  &__item > img{
+    margin-right: 0.625rem;
+  }
+}
+
+//------------------------------------------------Блок КАк это происходит 4 шага------------------------------------------------------
+.stepsOfWork{
+  &__inner{
+    display: flex;
+    flex-direction: row;
+	  flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 5%;
+    @include smallTablet { padding: 40px 0px; };
+    @include bigTablet { padding: 40px 0px; };
+  }
+}
+.step{
+  display: flex;
+  margin-top: 5%;
+  width: 39%;
+  align-items: center;
+  @include bigTablet { width: 100%; justify-content: center; margin-top: 10%;};
+  @include smallTablet { justify-content: flex-start;};
+  @include middleMobile { justify-content: center;}
+
+  &__number{
+    font-weight: 300;
+    font-size: 3.125rem;
+    line-height: 3.8125rem;
+    margin-right: 2.625rem;
+    text-shadow: 0.125rem 0.125rem 0rem rgba(254, 209, 0, 1);
+  }
+  &__title{
+    @include middleMobile { display: none;}
+  }
+  &__subtitle{
+    margin-top: 0.9375rem;
+  }
+}
+
+//----------------------------------------------------------Секция Цены---------------------------------------------------------------
+.prices{
+  width: 100%;
+  &__card-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 11%;
+    @include smallTablet { margin-top: 40px; };
+  }
+  &__card-inner > *:not(:last-child){
+    margin-right: 20px;
+  }
+  &__inner{
+    margin-top: 5%;
+    @include smallTablet { padding: 40px 0px; };
+  }
+  &__innerForTitles{
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include smallTablet { height: auto};
+  }
+  &__subtitle{
+    @include smallTablet { display: none;};
+  }
+
+}
+
+
+//  -------------------------------------------------секция автомобили------------------------------------------------------------------------
+.cars{
+  &__wrapperForButtons{
+    &_indent{
+      margin-top: 3.75rem;
+      @include smallTablet { margin-top: 20px;};
+    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__subtitle{
+    @include smallTablet { display: none;};
+  }
+  &__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-text{
+      @include smallMobile {font-size: 13px;}
+    }
+    &_mainTheme{
+      width: 12.5rem;
+      height: 3.125rem;
+      border: 0.0625rem solid #FED100;
+      margin-right: 1.25rem;
+    }
+  }
+  &__inner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 9%;
+    position: relative;
+    @include bigTablet { padding: 40px 0px; margin-top: 0px;};
+  }
+  width: 100%;
+  &__innerForTitles{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include bigTablet { height: 60px;};
+  }
+  &__types{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3.75rem;
+    &-item{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 12.5625rem;
+      height: 3.125rem;
+      border: 0.0625rem solid #FED100;
+      &_mainTheme{
+        margin-right: 1.25rem;
+      }
+    }
+  }
+  &__link{
+    text-decoration: none;
+    color: $fontColor;
+  }
+}
+
+.gazelles{
+  display: block;
+  width: 100%;
+}
+
+
+.owl.nav{
+  position: relative;
+}
+
+// ------------------------------------------------------------Стили элементов карусели-------------------------------------------------------------------
+
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 34.25rem;
+  @include bigTablet { 
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    height: auto;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 94%;
+    @include bigTablet { display: none; };
+  }
+
+  &__img-car{
+    width: 40.0625rem !important;
+    height: auto;
+    margin-top: 3.125rem;
+ }
+ &__checkbox{
+   display: inline-block;
+   width: 0.875rem !important;
+   height: 0.875rem !important;
+   margin-right: 0.9375rem;
+ }
+ &__parameters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 50%;
+ }
+ &__parameter{
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 1.75rem;
+ }
+ &__infoMobile{
+   display: none;
+   @include bigTablet { 
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 150px;
+    &__infoMobile > :first-child {
+    margin-bottom: 80px;
+    }
+    &__infoMobile > :last-child{
+      margin-bottom: 45px;
+    }
+  }
+ }
+}
+
+.dots{
+  display: none;
+  justify-content: center;
+  @include bigTablet { 
+    display: flex; 
+    margin-bottom: 98px; 
+    position: absolute;
+    bottom: -13px;
+    left: calc(50% - #{136px / 2});}
+}
+.dot{
+  position: relative;
+  padding: 0.3125rem;
+  border-radius: 50%;
+  background: #333333;
+  transform: rotate(-90deg);
+  margin-right: 1.25rem;
+}
+
+.dot:focus::after{
+  position: absolute;
+  top: -0.4375rem;
+  left: -0.4375rem;
+  content: " ";
+  display: block;
+  padding: 0.625rem;
+  border: 0.125rem solid $mainColor;
+  border-radius: 50%;
+}
+.dot:focus{
+  outline: 0;
+}
+.dot:active{
+  outline: 0;
+}
+
+.my-next-button{
+  position: absolute;
+  top: 58%;
+  right: 4%;
+  z-index: 9999;
+  @include middleDesktop { right: -4%;}
+  @include bigTablet { display: none;}
+}
+.my-prev-button{
+  position: absolute;
+  top: 58%;
+  left: 4%;
+  z-index: 9999;
+  @include middleDesktop { left: -4%;}
+  @include bigTablet { display: none;}
+}
+
+.reviews{
+  &__inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &_color{
+      width: 100%;
+      background: $mainColor;
+    }
+  }
+  &__innerForButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 3.75rem;
+    padding-bottom: 5.875rem;
+  }
+}
+
+.checked {
+  color: red;
+}
+
+.card-review{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  &__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 120px;
+  }
+  &_mr_20{
+    margin-right: 20px;
+  }
+  &__dateAndRate{
+    margin-top: 0.625rem;
+  }
+  &__text{
+    margin-top: 1.25rem;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  &__link{
+    margin-top: 1.25rem;
+    color: $fontColor;
+  }
+  &_1st{
+    @include middleTablet { display: none;}
+  }
+  &_3st{
+    @include middleMobile { display: none;}
+  }
+}
+
+.feedback{
+  &__innerForFormElements{
+    display: flex;
+    flex-direction: column;
+    margin-top: 7.75rem;
+    width: 52%;
+    align-items: flex-start;
+    @include middleDesktop { width: 90%;}
+  }
+}
+.form-feedback{
+  display: flex;
+  &_position{
+    margin-top: 2.1875rem; 
+    @include bigTablet { margin-top: 2.1875rem;flex-direction: column; height: 518px;justify-content: space-around; align-items: initial; width: 100%;}
+  }
+  &__item{
+    border: 0;
+    border-bottom: 0.0625rem solid $fontColor ;
+    margin-right: 4.375rem;
+    padding-right: 68px;
+    @include bigTablet { margin-right: 0;}
+   &_width{
+     width: 18.75rem;
+     @include bigTablet { width: 100%;}
+   }
+  }
+  &__item::placeholder{
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+.buttonAndCheckbox{
+  position: relative;
+}
+
+//  -------------------------------------------------------------Секция Google-maps---------------------------------------------------------------
+
+.google-map{
+  &_mt_125{
+    margin-top: 7.8125rem;
+  }
+  &_fullScreen{
+    width: 100%;
+  }
+  &__map{
+    width: 100%;
+    height: 41.625rem;
+  }
+}
+.just-link{
+  display: none;
+}
+
+.popup-googleCards{
+  &__pos{
+    position: absolute;
+    top: 50%;
+    left: 33%;
+  }
+  width: 21.125rem;
+  height: 18.5rem;
+  &__mainInner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding: 1.875rem;
+  }
+  &__item{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 1.25rem;
+  }
+  &__icon{
+    margin-right: 0.9375rem;
+  }
+  &__text{
+      white-space: nowrap;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1rem;
+      line-height: 1.3125rem;
+      color: $fontColor;
+    &_underline{
+      text-decoration: underline;
+    }
+  }
+}
+.socialNetworks{
+  display: flex;
+  flex-direction: row;
+  &_center{
+    justify-content: center;
+  }
+  &_end{
+    justify-content: flex-end;
+  }
+  &_mb_20{
+    margin-bottom: 1.25rem;
+  }
+  &__item{
+    margin-right: 1.5625rem;
+  }
+  &_mt{
+    margin-top: -20px;
+  }
+}
+
+
+// -------------------------------------------------------------------------Секция футер----------------------------------------------------------------
+
+
+.footer{
+  &_color{
+    background: $mainColor;
+  }
+  &__inner{
+    &_position{
+      padding-top: 100px;
+      padding-bottom: 120px;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      @include bigTablet {     display: -ms-flexbox;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        padding: 2.5rem 0rem;
+        align-items: flex-start;}
+    }
+ }
+  &_innerForBackCall{
+    position: relative;
+  }
+&__item{
+  text-align: center;
+  @include bigTablet { margin-top: 40px; width: 100%;}
+}
+}
+
+.referencesToAgreements{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__link{
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 130.4%;
+    color: $fontColor;
+    text-decoration: none;
+    &_pos{
+      margin-top: 20px;
+    }
+  }
+}
